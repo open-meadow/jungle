@@ -56,7 +56,7 @@
       <div class="alert alert-warning" role="alert">
         Your cart is currently empty. Visit our  <a href="<%= root_path %>" class="alert-link">home page</a> to add items to your cart.
       </div>
-      <a href="<%= root_path %>"><button class="btn btn-success btn-lg">Home Page</button></a>
+      <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-success' %>
     </div>
   <% end %>
 
