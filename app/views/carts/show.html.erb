@@ -1,8 +1,10 @@
 <section class="cart-show">
 
-  <header class="page-header">
-    <h1>My Cart</h1>
-  </header>
+<header class="page-header">
+  <h1>My Cart</h1>
+</header>
+
+<% if enhanced_cart.length > 0 %>
 
   <div class="panel panel-default items">
     <table class="table table-bordered">
@@ -48,5 +50,14 @@
       <% end %>
     </div>
   </div>
+
+  <% else %>
+    <div>
+      <div class="alert alert-warning" role="alert">
+        Your cart is currently empty. Visit our  <a href="<%= root_path %>" class="alert-link">home page</a> to add items to your cart.
+      </div>
+      <a href="<%= root_path %>"><button class="btn btn-success btn-lg">Home Page</button></a>
+    </div>
+  <% end %>
 
 </section>
