@@ -1,4 +1,12 @@
 <section class="products-index">
+
+    <% if active_sale? %>
+      <p class="alert alert-info">
+        There's an active <%= @sales.name %> sale going on!
+        <strong>Everything is <%= @sales.percent_off %>% off!</strong>
+      </p>
+    <% end %>
+
   <header class="page-header">
     <div class="intro">
       <p>
