@@ -1,5 +1,3 @@
-<p>poopoo</p>
-
 <tr>
 
   <td>
@@ -15,7 +13,13 @@
   </td>
 
   <td>
-    STATUS
+    <% if sale.ends_on < Date.current %>
+      <span class="badge bg-danger">Finished</span>
+    <% elsif sale.starts_on > Date.current %>
+      <span class="badge bg-warning">Upcoming</span>
+    <% else %>
+      <span class="badge bg-success">Active</span>
+    <% end %>
   </td>
 
   <td>
