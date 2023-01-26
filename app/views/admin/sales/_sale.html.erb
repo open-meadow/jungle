@@ -13,9 +13,10 @@
   </td>
 
   <td>
-    <% if sale.ends_on < Date.current %>
+    <%# get from models/sale.rb %>
+    <% if sale.finished? %>
       <span class="badge bg-danger">Finished</span>
-    <% elsif sale.starts_on > Date.current %>
+    <% elsif sale.upcoming? %>
       <span class="badge bg-warning">Upcoming</span>
     <% else %>
       <span class="badge bg-success">Active</span>
