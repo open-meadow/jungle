@@ -8,80 +8,127 @@ RSpec.describe User, type: :model do
   describe 'User Validations' do
 
     it "The user has everything" do
-      @users = User.new(name: "Mister Popo", password: "popo", password_confirmation:"popo", email: "mister@popo.com")
+      @user = User.new(name: "Mister Popo", password: "popo", password_confirmation:"popo", email: "mister@popo.com")
       
-      @users.save
+      @user.save
 
-      expect(@users).to be_valid
+      expect(@user).to be_valid
     end
 
     it "throw error if name is not present" do
-      @users = User.new(name: nil, password: "popo", password_confirmation:"popo", email: "mister@popo.com")
+      @user = User.new(name: nil, password: "popo", password_confirmation:"popo", email: "mister@popo.com")
       
-      @users.save
+      @user.save
 
-      expect(@users).to_not be_valid
-      # expect(@users.errors.full_messages).to include("Name can't be blank")
+      expect(@user).to_not be_valid
+      # expect(@user.errors.full_messages).to include("Name can't be blank")
 
     end
 
     it "throw error if password is not present" do
-      @users = User.new(name: "Mister popo", password: nil, password_confirmation:"popo", email: "mister@popo.com")
+      @user = User.new(name: "Mister popo", password: nil, password_confirmation:"popo", email: "mister@popo.com")
       
-      @users.save
+      @user.save
 
-      expect(@users.errors.full_messages).to include("Password can't be blank")
+      expect(@user.errors.full_messages).to include("Password can't be blank")
 
     end
 
     it "throw error if password_confirmation is not present" do
-      @users = User.new(name: "Mister popo", password: "popo", password_confirmation: nil, email: "mister@popo.com")
+      @user = User.new(name: "Mister popo", password: "popo", password_confirmation: nil, email: "mister@popo.com")
       
-      @users.save
+      @user.save
 
-      expect(@users).to_not be_valid
+      expect(@user).to_not be_valid
     end
 
     it "throw error if password_confirmation is not the same as password" do
-      @users = User.new(name: "Mister popo", password: "popo", password_confirmation: "opop", email: "mister@popo.com")
+      @user = User.new(name: "Mister popo", password: "popo", password_confirmation: "opop", email: "mister@popo.com")
       
-      @users.save
+      @user.save
 
-      expect(@users.errors.full_messages).to include("Password confirmation doesn't match Password")
+      expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
 
     end
 
     it "throw error if email is not present" do
-      @users = User.new(name: "Mister popo", password: "popo", password_confirmation: "popo", email: nil)
+      @user = User.new(name: "Mister popo", password: "popo", password_confirmation: "popo", email: nil)
       
-      @users.save
+      @user.save
 
-      expect(@users.errors.full_messages).to include("Email can't be blank")
+      expect(@user.errors.full_messages).to include("Email can't be blank")
 
     end
 
     it "throw error if email exists in the database" do
-      @users = User.new(name: "Mister popo", password: "popo", password_confirmation: "popo", email: "tristanjacobs@gmail.com")
+      @user = User.new(name: "Mister popo", password: "popo", password_confirmation: "popo", email: "tristanjacobs@gmail.com")
 
-      @users2 = User.new(name: "Mister popo", password: "popo", password_confirmation: "popo", email: "TristanJacobs@gmail.com")
+      @user2 = User.new(name: "Mister popo", password: "popo", password_confirmation: "popo", email: "TristanJacobs@gmail.com")
       
-      @users.save
-      @users2.save
+      @user.save
+      @user2.save
 
-      expect(@users2).to_not be_valid
-      # expect(@users.errors.full_messages).to include("Email alre")
+      expect(@user2).to_not be_valid
+      # expect(@user.errors.full_messages).to include("Email alre")
 
     end
 
     it "password should have minimum length" do
-      @users = User.new(name: "Mister popo", password: "pop", password_confirmation: "pop", email: "tristanjacobs@gmail.com")
+      @user = User.new(name: "Mister popo", password: "pop", password_confirmation: "pop", email: "tristanjacobs@gmail.com")
       
-      @users.save
+      @user.save
 
-      expect(@users).to_not be_valid
-      # expect(@users.errors.full_messages).to include("Email alre")
+      expect(@user).to_not be_valid
+      # expect(@user.errors.full_messages).to include("Email alre")
 
     end
 
+  end
+
+  describe '.authenticate with credentials' do
+    it 'should pass when correct e-mail and password are given' do
+      @user = User.new(name: "Mister popo", password: "password", password_confirmation: "password", email: "tristanjacobs@gmail.com")
+      @user.save
+
+      @login_instance = User.authenticate_with_credentials("tristanjacobs@gmail.com", "password")
+
+      expect(@login_instance.email).to eq (@user.email)
+    end
+
+    it 'should fail when wrong e-mail is given' do
+      @user = User.new(name: "Mister popo", password: "password", password_confirmation: "password", email: "tristanjacobs@gmail.com")
+      @user.save
+
+      @login_instance = User.authenticate_with_credentials("tristanjacobsrox@gmail.com", "password")
+      
+      expect(@login_instance).to be_nil
+    end
+
+    it 'should fail when wrong password is given' do
+      @user = User.new(name: "Mister popo", password: "password", password_confirmation: "password", email: "tristanjacobs@gmail.com")
+      @user.save
+
+      @login_instance = User.authenticate_with_credentials("tristanjacobs@gmail.com", "password123")
+      
+      expect(@login_instance).to be_nil
+    end
+
+    it 'should pass when e-mail of different case is given' do
+      @user = User.new(name: "Mister popo", password: "password", password_confirmation: "password", email: "tristanjacobs@gmail.com")
+      @user.save
+
+      @login_instance = User.authenticate_with_credentials("TristanJacobs@gmail.com", "password")
+      
+      expect(@login_instance.email).to eq (@user.email)
+    end
+
+    it 'should pass when e-mail is given with whitespace' do
+      @user = User.new(name: "Mister popo", password: "password", password_confirmation: "password", email: "tristanjacobs@gmail.com")
+      @user.save
+
+      @login_instance = User.authenticate_with_credentials(" TristanJacobs@gmail.com ", "password")
+      
+      expect(@login_instance.email).to eq (@user.email)
+    end
   end
 end
