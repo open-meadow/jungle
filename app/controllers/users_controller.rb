@@ -6,12 +6,15 @@ class UsersController < ApplicationController
     user = User.new(user_params)
 
     if user.save
+      UserMailer.with(user: user).welcome_email.deliver_later
       session[:user_id] = user.id
       redirect_to '/'
     else
       redirect_to '/signup'
     end
+    
   end
+
 
   private
   def user_params
