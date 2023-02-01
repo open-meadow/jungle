@@ -26,19 +26,14 @@
   
   <% if session[:user_id] %>
     <%# Form to create new reviews %>
-    <div class="review-form>
-      <%= form_for [@product, @review] do |f| %>
-        <%= f.label :description, "Review" %>
-        <%= f.text_area :description, class: "form-control" %>
-
-        <%= f.label :rating %>
-        <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]), class: "form-control" %>
-
-        <%= hidden_field_tag "review[product_id]", @product.id  %>
-
-        <%= f.submit %>
-      <% end %>
-    </div>
+    <%= form_for [@product, @review] do |f| %>
+      <%= f.label :description, "Review" %>
+      <%= f.text_area :description, class: "form-control" %>
+      <%= f.label :rating %>
+      <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]), class: "form-control" %>
+      <%= hidden_field_tag "review[product_id]", @product.id  %>
+      <%= f.submit %>
+    <% end %>
   <br/>
   <% end %>
 

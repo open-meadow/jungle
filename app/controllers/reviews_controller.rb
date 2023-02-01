@@ -4,7 +4,6 @@ class ReviewsController < ApplicationController
     req_params = review_params
     req_params[:user_id] = session[:user_id]
     @review = Review.new(req_params)
-    # puts "This is review: ", @review.all
 
     if @review.save
       redirect_to "/products/#{req_params[:product_id]}"
