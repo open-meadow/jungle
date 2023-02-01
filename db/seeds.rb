@@ -242,64 +242,66 @@ puts "Re-creating Reviews"
 Review.destroy_all
 
 Review.create!({
-  product_id: 1,
+  product_id: 12,
   user_id: 1,
   description: "Very happy! My ex-girlfriend started talking to me again!",
   rating: 5, 
 })
 
 Review.create!({
-  product_id: 1,
+  product_id: 12,
   user_id: 2,
   description: "Not happy. My current girlfriend started talking to Bob again!",
   rating: 1, 
 })
 
 Review.create!({
-  product_id: 1,
+  product_id: 12,
   user_id: 3,
   description: "I love Bobby!",
   rating: 5, 
 })
 
 Review.create!({
-  product_id: 2,
+  product_id: 11,
   user_id: 1,
   description: "Meh",
   rating: 3, 
 })
 
 Review.create!({
-  product_id: 2,
+  product_id: 11,
   user_id: 2,
   description: "Meh",
   rating: 3, 
 })
 
 Review.create!({
-  product_id: 2,
+  product_id: 11,
   user_id: 3,
   description: "Meh",
   rating: 3, 
 })
 
 Review.create!({
-  product_id: 3,
+  product_id: 10,
   user_id: 1,
   description: "I was told this was tasty and that I should eat this. I am getting a stomach ache",
   rating: 1, 
 })
 
 Review.create!({
-  product_id: 3,
+  product_id: 10,
   user_id: 2,
   description: "MWAHAHAHA!!!!",
   rating: 5, 
 })
 
 Review.create!({
-  product_id: 3,
+  product_id: 10,
   user_id: 3,
   description: "Bobby!!! Nooooooooooo!!!",
   rating: 1, 
 })
+
+puts "DONE!"
