@@ -32,6 +32,8 @@
     <%= f.label :rating %>
     <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %>
 
+    <%= hidden_field_tag "review[product_id]", @product.id  %>
+
     <%= f.submit %>
   <% end %>
 
