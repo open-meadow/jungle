@@ -20,8 +20,24 @@
     </div>
   </article>
   <br/>
+
   <h1>Reviews</h1>
   <hr/>
+  
+  <%# Form to create new reviews %>
+  <%= form_for [@product, @review] do |f| %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <%= f.label :rating %>
+    <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %>
+
+    <%= f.submit %>
+  <% end %>
+
+  <br/>
+
+  <%# Show existing reviews %>
   <article>
     <% @reviews.each do |review| %>
       <div><h3>User: </h3> <span><%= review.user_id %></span></div>
