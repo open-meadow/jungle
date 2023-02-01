@@ -24,20 +24,21 @@
   <h1>Reviews</h1>
   <hr/>
   
-  <%# Form to create new reviews %>
-  <%= form_for [@product, @review] do |f| %>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <% if session[:user_id] %>
+    <%# Form to create new reviews %>
+    <%= form_for [@product, @review] do |f| %>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
 
-    <%= f.label :rating %>
-    <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %>
+      <%= f.label :rating %>
+      <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %>
 
-    <%= hidden_field_tag "review[product_id]", @product.id  %>
+      <%= hidden_field_tag "review[product_id]", @product.id  %>
 
-    <%= f.submit %>
-  <% end %>
-
+      <%= f.submit %>
+    <% end %>
   <br/>
+  <% end %>
 
   <%# Show existing reviews %>
   <article>
@@ -45,6 +46,10 @@
       <div><h3>User: </h3> <span><%= review.user_id %></span></div>
       <div><h3>Rating: </h3> <span><%= review.rating %>/5</span></div>
       <p><%= review.description %></p>
+      <% if session[:user_id] == review.user_id %>
+        <%= link_to "Delete", [@product, review], method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
+
       <hr/>
     <% end %>
   </article>
