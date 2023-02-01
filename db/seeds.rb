@@ -235,3 +235,71 @@ puts "DONE!"
 # Photo by <a href="https://unsplash.com/@mrlessy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kevin Lessy</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 # Photo by <a href="https://unsplash.com/@szmigieldesign?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Lukasz Szmigiel</a> on <a href="https://unsplash.com/s/photos/forest?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
+## REVIEWS
+
+puts "Re-creating Reviews"
+
+Review.destroy_all
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  description: "Very happy! My ex-girlfriend started talking to me again!",
+  rating: 5, 
+})
+
+Review.create!({
+  product_id: 1,
+  user_id: 2,
+  description: "Not happy. My current girlfriend started talking to Bob again!",
+  rating: 1, 
+})
+
+Review.create!({
+  product_id: 1,
+  user_id: 3,
+  description: "I love Bobby!",
+  rating: 5, 
+})
+
+Review.create!({
+  product_id: 2,
+  user_id: 1,
+  description: "Meh",
+  rating: 3, 
+})
+
+Review.create!({
+  product_id: 2,
+  user_id: 2,
+  description: "Meh",
+  rating: 3, 
+})
+
+Review.create!({
+  product_id: 2,
+  user_id: 3,
+  description: "Meh",
+  rating: 3, 
+})
+
+Review.create!({
+  product_id: 3,
+  user_id: 1,
+  description: "I was told this was tasty and that I should eat this. I am getting a stomach ache",
+  rating: 1, 
+})
+
+Review.create!({
+  product_id: 3,
+  user_id: 2,
+  description: "MWAHAHAHA!!!!",
+  rating: 5, 
+})
+
+Review.create!({
+  product_id: 3,
+  user_id: 3,
+  description: "Bobby!!! Nooooooooooo!!!",
+  rating: 1, 
+})
