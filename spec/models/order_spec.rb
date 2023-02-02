@@ -107,19 +107,19 @@ RSpec.describe Order, type: :model do
         stripe_charge_id: 123,
       )
 
-      @order.save!
-
-      puts "order id:", @order.id
       # 2. build line items on @order
       # ...
-      @order.line_items.create!(
-        order_id: @order.id,
+      @order.line_items.new(
         product_id: @product2.id,
         quantity: 1,
         item_price_cents: 100,
         total_price_cents: 100
       )
+      
+      puts "line items inspect", @order.line_items.inspect
+
       # 3. save! the order - ie raise an exception if it fails (not expected)
+      # @order.line_items.save!
       @order.save!
       # 4. reload products to have their updated quantities
       @product1.reload
@@ -130,8 +130,35 @@ RSpec.describe Order, type: :model do
     end
 
     # pending test 2
-    xit 'does not deduct quantity from products that are not in the order' do
+    it 'does not deduct quantity from products that are not in the order' do
       # TODO: Implement based on hints in previous test
+      @order = Order.new(
+        email: "a@a.com",
+        total_cents: 100,
+        stripe_charge_id: 123,
+      )
+
+      # 2. build line items on @order
+      # ...
+      @order.line_items.new(
+        product_id: @product2.id,
+        quantity: 1,
+        item_price_cents: 100,
+        total_price_cents: 100
+      )
+      
+      puts "line items inspect", @order.line_items.inspect
+
+      # 3. save! the order - ie raise an exception if it fails (not expected)
+      # @order.line_items.save!
+      @order.save!
+      # 4. reload products to have their updated quantities
+      @product1.reload
+      @product2.reload
+      @product3.reload
+
+
+      expect(@product3.quantity).to eq(23)
     end
   end
 end

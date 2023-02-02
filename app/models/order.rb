@@ -10,14 +10,14 @@ class Order < ApplicationRecord
   private
 
   def reduce_product_quantities
-    puts "self line items: ", self.line_items.inspect
-    puts "is_empty?", self.line_items.empty?
+    
     if self.line_items.empty?
       return
     end
 
-    self.line_items each do |item|
+    self.line_items.each do |item|
       product = item.product
+      puts "product", product.inspect
       product.quantity -= item.quantity
       product.save!
     end
