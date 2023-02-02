@@ -56,8 +56,7 @@ When a product has a quantity of zero, a badge is displayed by the product to re
 
 > Sold out badge
 
-![screenshot](https://github.com/open-meadow/scheduler/blob/d89e4d7a41476328005519e4c462f2fbd1e82af5/docs/1-displaying_appointments.png)
-
+![screenshot](https://github.com/open-meadow/jungle/blob/dff8c503bb8a36611c43beb0b7d7ff1294711555/docs/sold_out_badge.png)  
 
 ### Order details
 Update order details page with image, item description and all relevant information
@@ -65,9 +64,6 @@ Update order details page with image, item description and all relevant informat
 ## Bug fixes
 ### Inventory Adjustment
 Accurately reduce inventory whenever a user makes a purchase.
-> Inventory Adjustment
-
-![screenshot](https://github.com/open-meadow/jungle/blob/dff8c503bb8a36611c43beb0b7d7ff1294711555/docs/sold_out_badge.png)  
 
 ### Admin Authentication
 Admin authentication when viewing Admin pages
