@@ -1,8 +1,8 @@
 # Jungle
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+Jungle is an inherited codebase in which I performed several bug fixes and feature additions.
 
-## Setup
+<!-- ## Setup
 
 1. Run `bundle install` to install dependencies
 2. Create `config/database.yml` by copying `config/database.example.yml`
@@ -28,4 +28,52 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Rails 6.1 [Rails Guide](http://guides.rubyonrails.org/v6.1/)
 - Bootstrap 5
 - PostgreSQL 9.x
-- Stripe
+- Stripe -->
+
+## Added Features
+
+### Category editing for Admins
+Allow website admins to create and edit product categories.
+> Admin Categories
+
+![screenshot](https://github.com/open-meadow/scheduler/blob/d89e4d7a41476328005519e4c462f2fbd1e82af5/docs/1-displaying_appointments.png)
+
+### Dashboard for Admins
+Create Dashboard for Admins to view categories and products
+> Admin Dashboard
+
+![screenshot](https://github.com/open-meadow/scheduler/blob/d89e4d7a41476328005519e4c462f2fbd1e82af5/docs/1-displaying_appointments.png)
+
+### Allow Admins to add or remove Holiday Discount periods
+### About Page
+### User Authentication
+### E-mail receipt
+### Product reviews and ratings
+
+## UI Improvements
+### Sold-out badge
+When a product has a quantity of zero, a badge is displayed by the product to reflect this.
+
+> Sold out badge
+
+![screenshot](https://github.com/open-meadow/scheduler/blob/d89e4d7a41476328005519e4c462f2fbd1e82af5/docs/1-displaying_appointments.png)
+
+
+
+
+### Order details
+
+## Bug fixes
+### Inventory Adjustment
+Accurately reduce inventory whenever a user makes a purchase.
+
+> Inventory Adjustment
+
+![screenshot](https://github.com/open-meadow/scheduler/blob/d89e4d7a41476328005519e4c462f2fbd1e82af5/docs/1-displaying_appointments.png)  
+
+### Admin Authentication
+### Display formatting
+### Empty Cart
+
+## Testing
+Various tests through RSpec and Cypress
