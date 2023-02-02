@@ -8,27 +8,27 @@ Jungle is an inherited codebase in which I performed several bug fixes and featu
 Allow website admins to create and edit product categories.
 > Admin Categories
 
-![screenshot](https://github.com/open-meadow/scheduler/blob/d89e4d7a41476328005519e4c462f2fbd1e82af5/docs/1-displaying_appointments.png)
+![screenshot](https://github.com/open-meadow/jungle/blob/dff8c503bb8a36611c43beb0b7d7ff1294711555/docs/admin_categories.png)
 
 ### Dashboard for Admins
 Create Dashboard for Admins to view categories and products
 > Admin Dashboard
 
-![screenshot](https://github.com/open-meadow/scheduler/blob/d89e4d7a41476328005519e4c462f2fbd1e82af5/docs/1-displaying_appointments.png)
+![screenshot](https://github.com/open-meadow/jungle/blob/dff8c503bb8a36611c43beb0b7d7ff1294711555/docs/admin_dashboard.png)
 
 ### Allow Admins to add or remove Holiday Discount periods
 Allow Admins to create and remove new Discount periods
 > Admin Sales Dashboard
 
-![screenshot](https://github.com/open-meadow/scheduler/blob/d89e4d7a41476328005519e4c462f2fbd1e82af5/docs/1-displaying_appointments.png)
+![screenshot](https://github.com/open-meadow/jungle/blob/dff8c503bb8a36611c43beb0b7d7ff1294711555/docs/sales_dashboard.png)
 
 > Admin Create New Sale
 
-![screenshot](https://github.com/open-meadow/scheduler/blob/d89e4d7a41476328005519e4c462f2fbd1e82af5/docs/1-displaying_appointments.png)
+![screenshot](https://github.com/open-meadow/jungle/blob/dff8c503bb8a36611c43beb0b7d7ff1294711555/docs/create_new_sale.png)
 
 > Display Current Sale on Webpage
 
-![screenshot](https://github.com/open-meadow/scheduler/blob/d89e4d7a41476328005519e4c462f2fbd1e82af5/docs/1-displaying_appointments.png)
+![screenshot](https://github.com/open-meadow/jungle/blob/dff8c503bb8a36611c43beb0b7d7ff1294711555/docs/show_current_sale.png)
 
 ### About Page
 Create About Page
@@ -41,14 +41,14 @@ Sends an e-mail once an order is placed
 
 > Display sent e-mail
 
-![screenshot](https://github.com/open-meadow/scheduler/blob/d89e4d7a41476328005519e4c462f2fbd1e82af5/docs/1-displaying_appointments.png)
+![screenshot](https://github.com/open-meadow/jungle/blob/dff8c503bb8a36611c43beb0b7d7ff1294711555/docs/email.png)
 
 ### Product reviews and ratings
 Allows logged-in users to add new reviews to each product, and to view other reviews.
 
 > Display product reviews
 
-![screenshot](https://github.com/open-meadow/scheduler/blob/d89e4d7a41476328005519e4c462f2fbd1e82af5/docs/1-displaying_appointments.png)
+![screenshot](https://github.com/open-meadow/jungle/blob/dff8c503bb8a36611c43beb0b7d7ff1294711555/docs/reviews.png)
 
 ## UI Improvements
 ### Sold-out badge
@@ -67,13 +67,13 @@ Update order details page with image, item description and all relevant informat
 Accurately reduce inventory whenever a user makes a purchase.
 > Inventory Adjustment
 
-![screenshot](https://github.com/open-meadow/scheduler/blob/d89e4d7a41476328005519e4c462f2fbd1e82af5/docs/1-displaying_appointments.png)  
+![screenshot](https://github.com/open-meadow/jungle/blob/dff8c503bb8a36611c43beb0b7d7ff1294711555/docs/sold_out_badge.png)  
 
 ### Admin Authentication
 Admin authentication when viewing Admin pages
 > Admin Authentication
 
-![screenshot](https://github.com/open-meadow/scheduler/blob/d89e4d7a41476328005519e4c462f2fbd1e82af5/docs/1-displaying_appointments.png)  
+![screenshot](https://github.com/open-meadow/jungle/blob/dff8c503bb8a36611c43beb0b7d7ff1294711555/docs/admin_authentication.png)  
 
 
 ### Display formatting
